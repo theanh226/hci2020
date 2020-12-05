@@ -1,10 +1,11 @@
-import React from 'react';
-import Layout from '../../layouts/index';
+import React from "react";
+import Layout from "../../layouts/index";
 
-export default function LandingPage() {
+const LandingPage = () => {
   return (
     <Layout>
       <h1>AAAA</h1>
     </Layout>
   );
-}
+};
+export default LandingPage;

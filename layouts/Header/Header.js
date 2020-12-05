@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-import Image from 'next/image';
-import styles from './Header.module.css';
+import React from "react";
+import { Row, Col } from "antd";
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import Image from "next/image";
+import styles from "./Header.module.css";
 
-export default function Header() {
+const Header = () => {
   return (
     <Row justify="space-between" className={styles.header}>
       <Col span={12} className={styles.logo}>
@@ -16,4 +16,6 @@ export default function Header() {
       </Col>
     </Row>
   );
-}
+};
+
+export default Header;
