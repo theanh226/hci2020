@@ -1,0 +1,27 @@
+
+.login {
+    width:35%;
+    background-color: #7d7bbd;
+    padding: 2em;
+    margin: auto;
+    margin-top: 12em;
+    color: azure;
+    text-align: center;
+}
+
+.input{
+    padding: 1em 0;
+}
+
+.register{
+    padding: 1em 0;
+    color: azure;
+    
+}
+
+.register a{
+    color: azure;
+    text-decoration: underline;
+}
+ 
+ 
