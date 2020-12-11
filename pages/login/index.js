@@ -13,7 +13,9 @@ const LoginPage = () => {
           <div className={styles.register}>
             <p>Don't have an account? <a href="#" >Register</a></p>
           </div>
-          <Button type="primary" block>Sign in</Button>
+          <div className={styles.signin}>
+            <Button type="primary" block >Sign in</Button>
+          </div>
         </div>
       </form>
     </Layout>
