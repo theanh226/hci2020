@@ -1,6 +1,6 @@
 
 .login {
-    width:35%;
+    width:600px;
     background-color: #7d7bbd;
     padding: 2em;
     margin: auto;
@@ -10,13 +10,12 @@
 }
 
 .input{
-    padding: 1em 0;
+    margin: 1em 0;
 }
 
 .register{
-    padding: 1em 0;
-    color: azure;
-    
+    margin: 1em 0;
+    color: azure;   
 }
 
 .register a{
