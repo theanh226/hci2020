@@ -23,9 +23,12 @@
     text-decoration: underline;
 }
 
-.signin Button{
+.signin{
     background-color: #242273;
     border: none;
 }
- 
+
+.signin:hover{
+    color: black;
+}
  
