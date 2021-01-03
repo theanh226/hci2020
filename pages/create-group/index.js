@@ -107,8 +107,8 @@ const CreateGroupPage = () => {
         </Row>
         <Row justify="center">
           <Col span={12}>
-            <Form.Item {...tailLayout} className={styles.button}>
-              <Button type="primary" size="large" htmlType="submit">
+            <Form.Item {...tailLayout} className={styles.buttonWrapper}>
+              <Button type="primary" size="large" htmlType="submit" className={styles.button}>
                 <Typography.Title level={4} style={{ color: 'white' }}>
                   Create Group
                 </Typography.Title>

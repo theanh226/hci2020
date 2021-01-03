@@ -23,6 +23,16 @@
 }
 
 /* BUTTON */
-.button {
+.buttonWrapper {
   text-align: right;
+}
+.button {
+  background-color: #242273 !important;
+  border-color: #242273;
+  color: white;
+}
+.button:hover {
+  background-color: #4f4e8f !important;
+  border-color: #242273;
+  color: #242273;
 }
