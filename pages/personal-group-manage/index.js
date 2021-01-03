@@ -2,7 +2,7 @@ import React from "react";
 import Sider from "../../components/sider/Sider";
 import LayoutMain from "../../layouts/index";
 import GroupCard from "../../components/group-card/group-card.js";
-import { Layout } from "antd";
+import { Row, Col, Layout } from "antd";
 
 const { Content } = Layout;
 
@@ -10,11 +10,8 @@ const PersonalGroupManage = () => {
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
-        <Sider highlight={"4"}/>
-        <Layout
-          className="site-layout"
-          style={{ background: "unset" }}
-        >
+        <Sider highlight={"4"} />
+        <Layout className="site-layout" style={{ background: "unset" }}>
           <Content style={{ margin: "0px 16px 0", padding: "4em" }}>
             <div
               className="site-layout-background"
@@ -25,10 +22,14 @@ const PersonalGroupManage = () => {
               }}
             >
               <h2>Study Group Manage</h2>
-              <GroupCard />
-              <GroupCard />
-              <GroupCard />
-              <GroupCard />
+              <Row justify="center">
+                <Col span={16}>
+                  <GroupCard />
+                  <GroupCard />
+                  <GroupCard />
+                  <GroupCard />
+                </Col>
+              </Row>
             </div>
           </Content>
         </Layout>

@@ -1,10 +1,19 @@
 import React from "react";
 import LayoutMain from "../../layouts/index";
 import Sider from "../../components/sider/Sider";
-import { Row, Col, Typography, Form, Input, Button, DatePicker, Layout } from "antd";
+import {
+  Row,
+  Col,
+  Typography,
+  Form,
+  Input,
+  Button,
+  DatePicker,
+  Layout,
+} from "antd";
 import styles from "./CreateGroup.module.css";
 import moment from "moment";
-const { Content} = Layout;
+const { Content } = Layout;
 
 const CreateGroupPage = () => {
   const layout = {
@@ -12,7 +21,7 @@ const CreateGroupPage = () => {
     wrapperCol: { span: 18 },
   };
   const tailLayout = {
-    wrapperCol: { offset: 6, span: 18 },
+    wrapperCol: { offset: 0, span: 24 },
   };
 
   //   SET TIME
@@ -32,7 +41,7 @@ const CreateGroupPage = () => {
       <Layout style={{ background: "unset" }}>
         <Sider highlight="2" />
         <Layout className="site-layout" style={{ background: "unset" }}>
-          <Content style={{ padding: "4em 17em" }}>
+          <Content style={{ padding: "4em 15em" }}>
             <div
               className="site-layout-background"
               style={{
@@ -41,7 +50,7 @@ const CreateGroupPage = () => {
                 background: "#f0f2f5",
               }}
             >
-              <h2>Personal Info</h2>
+              <h2>Group Information Form</h2>
               {/* INPUT */}
               <Form
                 {...layout}
@@ -51,12 +60,9 @@ const CreateGroupPage = () => {
                 }}
               >
                 <Row justify="center">
-                  <Col span={12} className={styles.wrapper}>
-                    <Typography.Title level={2} className={styles.title}>
-                      Create Group
-                    </Typography.Title>
+                  <Col span={24} className={styles.wrapper}>
                     <Row justify="center">
-                      <Col span={10} style={{ marginRight: "1em" }}>
+                      <Col span={16} style={{ marginRight: "1em" }}>
                         {/* GROUP NAME */}
                         <Form.Item
                           label="Group name"
@@ -107,7 +113,7 @@ const CreateGroupPage = () => {
                           />
                         </Form.Item>
                       </Col>
-                      <Col span={10} className={styles.introduction}>
+                      <Col span={16} className={styles.introduction}>
                         <div className={styles.introductionWrapper}>
                           <div className={styles.introduceTitle}>
                             <span>Introduce words</span>
@@ -123,39 +129,14 @@ const CreateGroupPage = () => {
                   </Col>
                 </Row>
                 <Row justify="center">
-                  <Col span={12}>
-                    <Row>
-                      <Col span={12}>
-                        <Button type="danger" size="large">
-                          <Typography.Title
-                            level={4}
-                            style={{ color: "white" }}
-                          >
-                            Go Back
-                          </Typography.Title>
-                        </Button>
-                      </Col>
-                      <Col span={12}>
-                        <Form.Item
-                          {...tailLayout}
-                          className={styles.buttonWrapper}
-                        >
-                          <Button
-                            type="primary"
-                            size="large"
-                            htmlType="submit"
-                            className={styles.button}
-                          >
-                            <Typography.Title
-                              level={4}
-                              style={{ color: "white" }}
-                            >
-                              Create Group
-                            </Typography.Title>
-                          </Button>
-                        </Form.Item>
-                      </Col>
-                    </Row>
+                  <Col span={24}>
+                    <Form.Item {...tailLayout}>
+                      <Button type="primary" size="large" htmlType="submit">
+                        <Typography.Title level={4} style={{ color: "white" }}>
+                          Create Group
+                        </Typography.Title>
+                      </Button>
+                    </Form.Item>
                   </Col>
                 </Row>
               </Form>

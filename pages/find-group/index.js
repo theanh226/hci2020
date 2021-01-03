@@ -25,10 +25,10 @@ const FindGroupPage = () => {
                 background: "#f0f2f5",
               }}
             >
+              <h2>Find Group</h2>
               <Row justify="center">
                 <Col span={16}>
                   <div className={styles.selectWrapper}>
-                    <Typography.Title level={3}>Find Group</Typography.Title>
                     <Row justify="space-between">
                       {/* SELECT SUBJECT */}
                       <Col span={5}>
