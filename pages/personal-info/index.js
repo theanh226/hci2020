@@ -1,38 +1,15 @@
 import React from "react";
-import Link from "next/link";
+import Sider from "../../components/sider/Sider";
 import LayoutMain from "../../layouts/index";
-import { Row, Col, Layout, Menu } from "antd";
-import { CloudOutlined, TeamOutlined, UserOutlined, LogoutOutlined} from "@ant-design/icons";
+import { Row, Col, Layout} from "antd";
 
-const { Content, Sider } = Layout;
+const { Content} = Layout;
 
 const PersonalInfo = () => {
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
-        <Sider
-          style={{
-            overflow: "auto",
-            minHeight: "100vh",
-            left: 0,
-          }}
-        >
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              <Link href="/personal-info">Personal Info</Link>
-            </Menu.Item>
-            <Menu.Item key="2" icon={<TeamOutlined />}>
-              <Link href="/personal-group-manage">Manage Study Group</Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<CloudOutlined />}>
-              <Link href="/personal-inbox">Inbox</Link>
-            </Menu.Item>
-            <Menu.Item key="4" icon={<LogoutOutlined />}>
-              <Link href="/login">Logout</Link>
-            </Menu.Item>
-          </Menu>
-        </Sider>
+        <Sider highlight="3"/>
         <Layout
           className="site-layout"
           style={{ background: "unset" }}
