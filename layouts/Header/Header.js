@@ -10,14 +10,14 @@ const Header = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <Link href="/login">
-          <a>Account's information</a>
+        <Link href="/personal-info">
+          Account's information
         </Link>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3">
         <Link href="/login">
-          <a>Log out</a>
+          Log out
         </Link>
       </Menu.Item>
     </Menu>
