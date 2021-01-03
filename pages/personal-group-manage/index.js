@@ -1,8 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import LayoutMain from "../../layouts/index";
-import { Row, Col, Layout, Menu } from "antd";
-import { CloudOutlined, TeamOutlined, UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import GroupCard from "../../components/group-card/group-card.js";
+import { Layout, Menu } from "antd";
+import {
+  CloudOutlined,
+  TeamOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 
 const { Content, Sider } = Layout;
 
@@ -13,8 +19,7 @@ const PersonalGroupManage = () => {
         <Sider
           style={{
             overflow: "auto",
-            height: "100vh",
-            position: "fixed",
+            minHeight: "100vh",
             left: 0,
           }}
         >
@@ -36,7 +41,7 @@ const PersonalGroupManage = () => {
         </Sider>
         <Layout
           className="site-layout"
-          style={{ marginLeft: 200, background: "unset" }}
+          style={{ background: "unset" }}
         >
           <Content style={{ margin: "0px 16px 0", padding: "4em" }}>
             <div
@@ -47,6 +52,11 @@ const PersonalGroupManage = () => {
                 background: "#f0f2f5",
               }}
             >
+              <h2>Study Group Manage</h2>
+              <GroupCard />
+              <GroupCard />
+              <GroupCard />
+              <GroupCard />
             </div>
           </Content>
         </Layout>

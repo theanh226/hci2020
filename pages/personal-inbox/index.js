@@ -19,8 +19,7 @@ const PersonalInbox = () => {
         <Sider
           style={{
             overflow: "auto",
-            height: "100vh",
-            position: "fixed",
+            minHeight: "100vh",
             left: 0,
           }}
         >
@@ -42,7 +41,7 @@ const PersonalInbox = () => {
         </Sider>
         <Layout
           className="site-layout"
-          style={{ marginLeft: 200, background: "unset" }}
+          style={{ background: "unset" }}
         >
           <Content style={{ margin: "0px 16px 0", padding: "4em" }}>
             <div

@@ -13,8 +13,7 @@ const PersonalInfo = () => {
         <Sider
           style={{
             overflow: "auto",
-            height: "100vh",
-            position: "fixed",
+            minHeight: "100vh",
             left: 0,
           }}
         >
@@ -36,9 +35,9 @@ const PersonalInfo = () => {
         </Sider>
         <Layout
           className="site-layout"
-          style={{ marginLeft: 200, background: "unset" }}
+          style={{ background: "unset" }}
         >
-          <Content style={{ margin: "0px 16px 0", padding: "4em" }}>
+          <Content style={{ padding: "4em 17em" }}>
             <div
               className="site-layout-background"
               style={{
