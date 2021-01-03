@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import LayoutMain from "../../layouts/index";
 import { Row, Col, Layout, Menu } from "antd";
-import { CloudOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
+import { CloudOutlined, TeamOutlined, UserOutlined, LogoutOutlined} from "@ant-design/icons";
 
 const { Content, Sider } = Layout;
 
@@ -29,7 +29,7 @@ const PersonalInfo = () => {
             <Menu.Item key="3" icon={<CloudOutlined />}>
               <Link href="/personal-inbox">Inbox</Link>
             </Menu.Item>
-            <Menu.Item key="4" icon={<CloudOutlined />}>
+            <Menu.Item key="4" icon={<LogoutOutlined />}>
               <Link href="/login">Logout</Link>
             </Menu.Item>
           </Menu>
@@ -47,6 +47,7 @@ const PersonalInfo = () => {
                 background: "#f0f2f5",
               }}
             >
+              <h2>Personal Info</h2>
               <Row>
                 <Col span={16}>
                   <Row

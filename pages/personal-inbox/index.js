@@ -1,8 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import LayoutMain from "../../layouts/index";
+import Mail from "../../components/mail";
 import { Row, Col, Layout, Menu } from "antd";
-import { CloudOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  CloudOutlined,
+  TeamOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 
 const { Content, Sider } = Layout;
 
@@ -29,7 +35,7 @@ const PersonalInbox = () => {
             <Menu.Item key="3" icon={<CloudOutlined />}>
               <Link href="/personal-inbox">Inbox</Link>
             </Menu.Item>
-            <Menu.Item key="4" icon={<CloudOutlined />}>
+            <Menu.Item key="4" icon={<LogoutOutlined />}>
               <Link href="/login">Logout</Link>
             </Menu.Item>
           </Menu>
@@ -42,12 +48,22 @@ const PersonalInbox = () => {
             <div
               className="site-layout-background"
               style={{
-                padding: 24,
+                padding: "12px 24px 24px",
                 textAlign: "center",
                 background: "#f0f2f5",
               }}
             >
-              Inbox Here
+              <h2>Inbox</h2>
+              <Row style={{ background: "white", fontWeight: "bold", textAlign: "left", paddingLeft: "0.5em" }}>
+                <Col span={5}>Name</Col>
+                <Col span={14}>Content</Col>
+                <Col span={5}>Date</Col>
+              </Row>
+              <Mail />
+              <Mail />
+              <Mail />
+              <Mail />
+              <Mail />
             </div>
           </Content>
         </Layout>
