@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import LayoutMain from "../../layouts/index";
-import Mail from "../../components/mail";
+import Mail from "../../components/mail/Mail";
 import { Row, Col, Layout, Menu } from "antd";
 import {
   CloudOutlined,
