@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import LayoutMain from "../../layouts/index";
 import { Row, Col, Layout, Menu } from "antd";
 import { CloudOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
@@ -20,28 +21,41 @@ const PersonalInfo = () => {
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<UserOutlined />}>
-                <a href="/personal-info">Personal Info</a>      
+              <Link href="/personal-info">Personal Info</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<TeamOutlined />}>
-                <a href="/personal-group-manage">Manage Study Group</a>
+              <Link href="/personal-group-manage">Manage Study Group</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<CloudOutlined />}>
-                <a href="/personal-inbox">Inbox</a>
+              <Link href="/personal-inbox">Inbox</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<CloudOutlined />}>
-              Logout
+              <Link href="/login">Logout</Link>
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout className="site-layout" style={{ marginLeft: 200, background: "unset" }}>
+        <Layout
+          className="site-layout"
+          style={{ marginLeft: 200, background: "unset" }}
+        >
           <Content style={{ margin: "0px 16px 0", padding: "4em" }}>
             <div
               className="site-layout-background"
-              style={{ padding: 24, textAlign: "center", background: "#f0f2f5" }}
+              style={{
+                padding: 24,
+                textAlign: "center",
+                background: "#f0f2f5",
+              }}
             >
               <Row>
                 <Col span={16}>
-                  <Row style={{ textAlign: "left", lineHeight: "3", fontSize: "1.2em" }}>
+                  <Row
+                    style={{
+                      textAlign: "left",
+                      lineHeight: "3",
+                      fontSize: "1.2em",
+                    }}
+                  >
                     {/* Name */}
                     <Col span={8}>Name:</Col>
                     <Col span={16}>Max Musteruserman</Col>
@@ -54,7 +68,11 @@ const PersonalInfo = () => {
                   </Row>
                 </Col>
                 <Col span={8}>
-                  <img src="https://a2.tvspielfilm.de/imedia/2748/10132748,h9mG+u3sBHexzIGgTqt6rWCk3asDJWPD6CWmzekVslQIkikfIsktlRkjOerP_1olW_iOZWnEXchssqyRkZG7Wg==.jpg" width="200" height="160"></img>
+                  <img
+                    src="https://a2.tvspielfilm.de/imedia/2748/10132748,h9mG+u3sBHexzIGgTqt6rWCk3asDJWPD6CWmzekVslQIkikfIsktlRkjOerP_1olW_iOZWnEXchssqyRkZG7Wg==.jpg"
+                    width="200"
+                    height="160"
+                  ></img>
                 </Col>
               </Row>
             </div>
