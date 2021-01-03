@@ -107,13 +107,24 @@ const CreateGroupPage = () => {
         </Row>
         <Row justify="center">
           <Col span={12}>
-            <Form.Item {...tailLayout} className={styles.buttonWrapper}>
-              <Button type="primary" size="large" htmlType="submit" className={styles.button}>
-                <Typography.Title level={4} style={{ color: 'white' }}>
-                  Create Group
-                </Typography.Title>
-              </Button>
-            </Form.Item>
+            <Row>
+              <Col span={12}>
+                <Button type="danger" size="large">
+                  <Typography.Title level={4} style={{ color: 'white' }}>
+                    Go Back
+                  </Typography.Title>
+                </Button>
+              </Col>
+              <Col span={12}>
+                <Form.Item {...tailLayout} className={styles.buttonWrapper}>
+                  <Button type="primary" size="large" htmlType="submit" className={styles.button}>
+                    <Typography.Title level={4} style={{ color: 'white' }}>
+                      Create Group
+                    </Typography.Title>
+                  </Button>
+                </Form.Item>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Form>
