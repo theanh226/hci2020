@@ -1,0 +1,28 @@
+.wrapper {
+  background-color: #a4a6af;
+  padding: 1.5em 0 2em 0;
+  margin: 5em 0 2em 0;
+}
+/* INPUT INFORMATION */
+.title {
+  padding-left: 1em;
+}
+
+/* INTRODUCE WORDS */
+.introductionWrapper {
+  height: 143px;
+  background-color: #c4c4c4;
+  padding: 0 0.5em;
+}
+.introduceTitle {
+  text-align: center;
+  font-size: 1.5em;
+}
+.TextArea {
+  height: 100px !important;
+}
+
+/* BUTTON */
+.button {
+  text-align: right;
+}
