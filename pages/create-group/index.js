@@ -13,6 +13,8 @@ import {
 } from "antd";
 import styles from "./CreateGroup.module.css";
 import moment from "moment";
+import { toast } from "react-toastify";
+
 const { Content } = Layout;
 
 const CreateGroupPage = () => {
@@ -23,7 +25,25 @@ const CreateGroupPage = () => {
   const tailLayout = {
     wrapperCol: { offset: 0, span: 24 },
   };
-
+  const notify = () =>
+    toast.success("Group created successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    toast.error("Error", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   //   SET TIME
   const disabledDate = (current) => {
     // Can not select days before today and today
@@ -131,7 +151,7 @@ const CreateGroupPage = () => {
                 <Row justify="center">
                   <Col span={24}>
                     <Form.Item {...tailLayout}>
-                      <Button type="primary" size="large" htmlType="submit">
+                      <Button onClick={notify} type="primary" size="large" htmlType="submit">
                         <Typography.Title level={4} style={{ color: "white" }}>
                           Create Group
                         </Typography.Title>

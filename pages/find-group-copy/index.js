@@ -5,16 +5,12 @@ import { Layout, Row, Col, Select, TimePicker, Button } from "antd";
 import moment from "moment";
 import styles from "./FindGroup.module.css";
 import GroupCard from "../../components/group-card/group-card.js";
-
-// for hc part
-import Link from "next/link";
 import { toast } from "react-toastify";
 
 const { Content } = Layout;
 
 const FindGroupPage = () => {
   const format = "HH:mm";
-
   const notify = () =>
     toast.success("Join request send successfully!", {
       position: "top-right",
@@ -96,15 +92,13 @@ const FindGroupPage = () => {
                         </Select>
                       </Col>
                       <Col span={5}>
-                        <Link href="/find-group-copy">
-                          <Button
-                            type="primary"
-                            size="large"
-                            style={{ width: "100%" }}
-                          >
-                            Find Group
-                          </Button>
-                        </Link>
+                        <Button
+                          type="primary"
+                          size="large"
+                          style={{ width: "100%" }}
+                        >
+                          Find Group
+                        </Button>
                       </Col>
                     </Row>
                   </div>
@@ -116,69 +110,57 @@ const FindGroupPage = () => {
                   {/* HARD CODE DATA */}
                   <Row className={styles.wrapper}>
                     <Col span={5}>
-                      <span className={styles.text}>Group Nexus</span>
+                      <span className={styles.text}>Group B</span>
                     </Col>
                     <Col span={5}>
                       <span className={styles.text}>1/4</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>Programmieren II</span>
+                      <span className={styles.text}>Analysis</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>9:00 Donnerstag</span>
+                      <span className={styles.text}>11:00 Montag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
                   </Row>
                   <Row className={styles.wrapper}>
                     <Col span={5}>
-                      <span className={styles.text}>The Engineer</span>
+                      <span className={styles.text}>Analysis Group</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>3/4</span>
+                      <span className={styles.text}>2/4</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>Software Technik</span>
+                      <span className={styles.text}>Analysis</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>10:30 Dienstag</span>
+                      <span className={styles.text}>14:30 Mittwoch</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
                   </Row>
                   <Row className={styles.wrapper}>
                     <Col span={5}>
-                      <span className={styles.text}>The Worble</span>
+                      <span className={styles.text}>The Group D</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>4/4</span>
+                      <span className={styles.text}>1/4</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>Lineare Algebra A</span>
+                      <span className={styles.text}>Analysis</span>
                     </Col>
                     <Col span={5}>
-                      <span className={styles.text}>14:30 Dienstag</span>
+                      <span className={styles.text}>16:30 Montag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
