@@ -1,14 +1,14 @@
-
 .login {
     width:400px;
-    background-color: #7d7bbd;
+    background-color: #001529;
     padding: 2em;
     margin: auto;
-    margin-top: 12em;
     color: azure;
     text-align: center;
 }
-
+.title {
+    color: white;
+}
 .input{
     margin: 1em 0;
 }
@@ -16,19 +16,5 @@
 .register{
     margin: 1em 0;
     color: azure;   
-}
-
-.register a{
-    color: azure;
-    text-decoration: underline;
-}
-
-.signin{
-    background-color: #242273;
-    border: none;
-}
-
-.signin:hover{
-    background-color: #4f4e8f ;
 }
  

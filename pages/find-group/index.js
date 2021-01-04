@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutMain from "../../layouts/index";
 import Sider from "../../components/sider/Sider";
-import { Layout, Row, Col, Typography, Select, TimePicker, Button } from "antd";
+import { Layout, Row, Col, Select, TimePicker, Button } from "antd";
 import moment from "moment";
 import styles from "./FindGroup.module.css";
 import GroupCard from "../../components/group-card/group-card.js";
