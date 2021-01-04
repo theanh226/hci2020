@@ -8,12 +8,23 @@ import GroupCard from "../../components/group-card/group-card.js";
 
 // for hc part
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const { Content } = Layout;
 
 const FindGroupPage = () => {
   const format = "HH:mm";
 
+  const notify = () =>
+    toast.success("Join request send successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
@@ -117,7 +128,11 @@ const FindGroupPage = () => {
                       <span className={styles.text}>9:00 Donnerstag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button
+                        onClick={() => notify()}
+                        type="primary"
+                        size="large"
+                      >
                         Join
                       </Button>
                     </Col>
@@ -136,7 +151,11 @@ const FindGroupPage = () => {
                       <span className={styles.text}>10:30 Dienstag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button
+                        onClick={() => notify()}
+                        type="primary"
+                        size="large"
+                      >
                         Join
                       </Button>
                     </Col>
@@ -155,7 +174,11 @@ const FindGroupPage = () => {
                       <span className={styles.text}>14:30 Dienstag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button
+                        onClick={() => notify()}
+                        type="primary"
+                        size="large"
+                      >
                         Join
                       </Button>
                     </Col>

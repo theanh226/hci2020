@@ -1,7 +1,7 @@
 import React from "react";
 import Sider from "../../components/sider/Sider";
 import LayoutMain from "../../layouts/index";
-import GroupCard from "../../components/group-card/group-card.js";
+import GroupCard from "../../components/group-card-edit/group-card.js";
 import { Row, Col, Layout } from "antd";
 
 const { Content } = Layout;
@@ -24,9 +24,6 @@ const PersonalGroupManage = () => {
               <h2>Study Group Manage</h2>
               <Row justify="center">
                 <Col span={16}>
-                  <GroupCard />
-                  <GroupCard />
-                  <GroupCard />
                   <GroupCard />
                 </Col>
               </Row>

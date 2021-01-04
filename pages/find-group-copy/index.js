@@ -5,12 +5,22 @@ import { Layout, Row, Col, Select, TimePicker, Button } from "antd";
 import moment from "moment";
 import styles from "./FindGroup.module.css";
 import GroupCard from "../../components/group-card/group-card.js";
+import { toast } from "react-toastify";
 
 const { Content } = Layout;
 
 const FindGroupPage = () => {
   const format = "HH:mm";
-
+  const notify = () =>
+    toast.success("Join request send successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
@@ -112,7 +122,7 @@ const FindGroupPage = () => {
                       <span className={styles.text}>11:00 Montag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
@@ -131,7 +141,7 @@ const FindGroupPage = () => {
                       <span className={styles.text}>14:30 Mittwoch</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
@@ -150,7 +160,7 @@ const FindGroupPage = () => {
                       <span className={styles.text}>16:30 Montag</span>
                     </Col>
                     <Col span={4} style={{ textAlign: "right" }}>
-                      <Button type="primary" size="large">
+                      <Button onClick={notify} type="primary" size="large">
                         Join
                       </Button>
                     </Col>
