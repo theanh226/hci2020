@@ -15,7 +15,7 @@ const GroupCard = () => {
         <span className={styles.text}>Analysis</span>
       </Col>
       <Col span={5}>
-        <span className={styles.text}>Time: 12:15</span>
+        <span className={styles.text}>12:15 Freitag</span>
       </Col>
       <Col span={4} style={{ textAlign: 'right' }}>
         <Button type="primary" size="large">
