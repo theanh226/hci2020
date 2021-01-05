@@ -24,7 +24,7 @@ const LoginPage = () => {
           <Input.Password placeholder="Confirm Password" className={styles.input} />
           <div className={styles.signin}>
             <p>
-              Already have an account? <Link href="/signin">Sign in</Link>
+              Already have an account? <Link href="/login">Sign in</Link>
             </p>
           </div>
           <Link href="/login">
