@@ -7,3 +7,17 @@
 .text {
   font-size: 1em;
 }
+
+/* INTRODUCE WORDS */
+.introductionWrapper {
+  height: 143px;
+  background-color: #cccccc;
+  padding: 0 0.5em;
+}
+.introduceTitle {
+  text-align: center;
+  font-size: 1.25em;
+}
+.TextArea {
+  height: 100px !important;
+}
