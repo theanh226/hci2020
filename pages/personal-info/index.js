@@ -1,26 +1,24 @@
-import React from "react";
-import Sider from "../../components/sider/Sider";
-import LayoutMain from "../../layouts/index";
-import { Row, Col, Layout} from "antd";
+import React from 'react';
+import Sider from '../../components/sider/Sider';
+import LayoutMain from '../../layouts/index';
+import { Row, Col, Layout, Button } from 'antd';
+import PersonalInfoEdit from '../../components/personal-info-edit/personal-info-edit';
 
-const { Content} = Layout;
+const { Content } = Layout;
 
 const PersonalInfo = () => {
   return (
     <LayoutMain>
-      <Layout style={{ background: "unset" }}>
-        <Sider highlight="3"/>
-        <Layout
-          className="site-layout"
-          style={{ background: "unset" }}
-        >
-          <Content style={{ padding: "4em 17em" }}>
+      <Layout style={{ background: 'unset' }}>
+        <Sider highlight="3" />
+        <Layout className="site-layout" style={{ background: 'unset' }}>
+          <Content style={{ padding: '4em 17em' }}>
             <div
               className="site-layout-background"
               style={{
                 padding: 24,
-                textAlign: "center",
-                background: "#f0f2f5",
+                textAlign: 'center',
+                background: '#f0f2f5',
               }}
             >
               <h2>Personal Info</h2>
@@ -28,9 +26,9 @@ const PersonalInfo = () => {
                 <Col span={16}>
                   <Row
                     style={{
-                      textAlign: "left",
-                      lineHeight: "3",
-                      fontSize: "1.2em",
+                      textAlign: 'left',
+                      lineHeight: '3',
+                      fontSize: '1.2em',
                     }}
                   >
                     {/* Name */}
@@ -52,6 +50,9 @@ const PersonalInfo = () => {
                   ></img>
                 </Col>
               </Row>
+            </div>
+            <div style={{ textAlign: 'Right', marginTop: '1em' }}>
+              <PersonalInfoEdit />
             </div>
           </Content>
         </Layout>
