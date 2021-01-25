@@ -127,23 +127,6 @@ const ButtonEdit = () => {
                   </Row>
                 </Col>
               </Row>
-              <Row justify="center">
-                <Col span={24}>
-                  <Form.Item {...tailLayout}>
-                    <Button
-                      onClick={notify}
-                      type="primary"
-                      size="large"
-                      htmlType="submit"
-                      style={{ marginTop: '2em', width: '50%' }}
-                    >
-                      <Typography.Title level={4} style={{ color: 'white' }}>
-                        Edit Group
-                      </Typography.Title>
-                    </Button>
-                  </Form.Item>
-                </Col>
-              </Row>
             </Form>
           </div>
         </Layout>

@@ -10,9 +10,8 @@
 
 /* INTRODUCE WORDS */
 .introductionWrapper {
-  height: 143px;
   background-color: #cccccc;
-  padding: 0 0.5em;
+  padding: 1em;
 }
 .introduceTitle {
   text-align: center;

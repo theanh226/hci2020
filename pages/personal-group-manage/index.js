@@ -1,13 +1,131 @@
 import React from "react";
-import Sider from "../../components/sider/Sider";
 import LayoutMain from "../../layouts/index";
-import GroupCard from "../../components/group-card-edit/group-card.js";
-import GroupCardLeave from "../../components/group-card-leave/group-card.js";
-import { Row, Col, Layout } from "antd";
+import Sider from "../../components/sider/Sider";
+import { Popconfirm, Layout, Button, Table, Input, Space } from "antd";
+import ButtonEdit from "../../components/group-card-edit/group-card-edit-modal.js";
+
+import { SearchOutlined } from "@ant-design/icons";
+
+// for hc part
+import data from "../../components/data/group-manage.json";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 const { Content } = Layout;
 
 const PersonalGroupManage = () => {
+  const [searchedColumn, setSearchColumn] = "";
+
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+    }) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{ width: 188, marginBottom: 8, display: "block" }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => handleReset(clearFilters)}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Reset
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex]
+        ? record[dataIndex]
+            .toString()
+            .toLowerCase()
+            .includes(value.toLowerCase())
+        : "",
+    onFilterDropdownVisibleChange: (visible) => {
+      if (visible) {
+      }
+    },
+    render: (text) => (searchedColumn === dataIndex ? <></> : text),
+  });
+
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+  };
+
+  const handleReset = (clearFilters) => {
+    clearFilters();
+  };
+
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      width: "30%",
+      ...getColumnSearchProps("name"),
+    },
+    {
+      title: "Member",
+      dataIndex: "member",
+      key: "member",
+      width: "20%",
+      ...getColumnSearchProps("member"),
+    },
+    {
+      title: "Subject",
+      dataIndex: "subject",
+      key: "subject",
+      ...getColumnSearchProps("subject"),
+    },
+    {
+      title: "Time",
+      dataIndex: "time",
+      key: "time",
+      ...getColumnSearchProps("time"),
+    },
+    {
+      title: "Option",
+      dataIndex: "option",
+      key: "option",
+      render: (option) => (
+        <>
+          {option == "own" ? (
+            <ButtonEdit />
+          ) : (
+            <Popconfirm
+              title="Do you want to leave this group?"
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button type="danger">Leave</Button>
+            </Popconfirm>
+          )}
+        </>
+      ),
+    },
+  ];
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
@@ -23,12 +141,23 @@ const PersonalGroupManage = () => {
               }}
             >
               <h2>Study Group Manage</h2>
-              <Row justify="center">
-                <Col span={16}>
-                  <GroupCard />
-                  <GroupCardLeave/>
-                </Col>
-              </Row>
+              <p></p>
+              {/* FILTER */}
+              <Table
+                columns={columns}
+                expandable={{
+                  expandedRowRender: (record) => (
+                    <p style={{ margin: 0 }}>{record.intro}</p>
+                  ),
+                  rowExpandable: (record) => record.intro !== "",
+                }}
+                pagination={{
+                  defaultPageSize: 7,
+                  showSizeChanger: true,
+                  pageSizeOptions: ["7", "14", "21"],
+                }}
+                dataSource={data}
+              />
             </div>
           </Content>
         </Layout>
@@ -36,4 +165,5 @@ const PersonalGroupManage = () => {
     </LayoutMain>
   );
 };
+
 export default PersonalGroupManage;

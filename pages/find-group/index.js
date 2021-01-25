@@ -155,7 +155,6 @@ const FindGroupPage = () => {
                 
                 dataSource={data}
               />
-              {/* <FindDataContainer findData={data} /> */}
             </div>
           </Content>
         </Layout>
