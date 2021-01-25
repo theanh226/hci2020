@@ -1,20 +1,18 @@
 import React from "react";
 import LayoutMain from "../../layouts/index";
 import Sider from "../../components/sider/Sider";
-import { Layout, Row, Col, Select, TimePicker, Button } from "antd";
-import moment from "moment";
-import styles from "./FindGroup.module.css";
-import GroupCard from "../../components/group-card/group-card.js";
+import { Layout, Button, Table, Input, Space } from "antd";
+
+import { SearchOutlined } from "@ant-design/icons";
 
 // for hc part
+import data from "../../components/data/group.json";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
 const { Content } = Layout;
 
 const FindGroupPage = () => {
-  const format = "HH:mm";
-
   const notify = () =>
     toast.success("Join request send successfully!", {
       position: "top-right",
@@ -25,6 +23,105 @@ const FindGroupPage = () => {
       draggable: true,
       progress: undefined,
     });
+
+  const [searchedColumn, setSearchColumn] = "";
+
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+    }) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{ width: 188, marginBottom: 8, display: "block" }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => handleReset(clearFilters)}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Reset
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex]
+        ? record[dataIndex]
+            .toString()
+            .toLowerCase()
+            .includes(value.toLowerCase())
+        : "",
+    onFilterDropdownVisibleChange: (visible) => {
+      if (visible) {
+      }
+    },
+    render: (text) => (searchedColumn === dataIndex ? <></> : text),
+  });
+
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+  };
+
+  const handleReset = (clearFilters) => {
+    clearFilters();
+  };
+
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      width: "30%",
+      ...getColumnSearchProps("name"),
+    },
+    {
+      title: "Member",
+      dataIndex: "member",
+      key: "member",
+      width: "20%",
+      ...getColumnSearchProps("member"),
+    },
+    {
+      title: "Subject",
+      dataIndex: "subject",
+      key: "subject",
+      ...getColumnSearchProps("subject"),
+    },
+    {
+      title: "Time",
+      dataIndex: "time",
+      key: "time",
+      ...getColumnSearchProps("time"),
+    },
+    {
+      title: "Option",
+      dataIndex: "",
+      key: "",
+      render: () => <Button onClick={() => notify()}>Join</Button>,
+    },
+  ];
   return (
     <LayoutMain>
       <Layout style={{ background: "unset" }}>
@@ -40,152 +137,24 @@ const FindGroupPage = () => {
               }}
             >
               <h2>Find Group</h2>
-              <Row justify="center">
-                <Col span={16}>
-                  <div className={styles.selectWrapper}>
-                    <Row justify="space-between">
-                      {/* SELECT SUBJECT */}
-                      <Col span={5}>
-                        <Select
-                          showSearch
-                          style={{ width: "100%" }}
-                          placeholder="Select Subject"
-                          optionFilterProp="children"
-                          filterOption={(input, option) =>
-                            option.children
-                              .toLowerCase()
-                              .indexOf(input.toLowerCase()) >= 0
-                          }
-                          size="large"
-                        >
-                          <Select.Option value="1">Analysis</Select.Option>
-                          <Select.Option value="2">
-                            Mensch Computer Interaktion
-                          </Select.Option>
-                          <Select.Option value="3">Programmieren</Select.Option>
-                          <Select.Option value="4">
-                            Lineare Algebra
-                          </Select.Option>
-                          <Select.Option value="5">
-                            Software Technik
-                          </Select.Option>
-                          <Select.Option value="6">IT-Sicherheit</Select.Option>
-                        </Select>
-                      </Col>
-                      {/* SELECT TIME */}
-                      <Col span={5}>
-                        <TimePicker
-                          style={{ width: "100%" }}
-                          defaultValue={moment("00:00", format)}
-                          format={format}
-                          minuteStep={15}
-                          size="large"
-                        />
-                      </Col>
-                      {/* AVAILABLE */}
-                      <Col span={5}>
-                        <Select
-                          defaultValue="All"
-                          style={{ width: "100%" }}
-                          size="large"
-                        >
-                          <Select.Option value="All">All</Select.Option>
-                          <Select.Option value="Available">
-                            Available
-                          </Select.Option>
-                        </Select>
-                      </Col>
-                      <Col span={5}>
-                        <Link href="/find-group-copy">
-                          <Button
-                            type="primary"
-                            size="large"
-                            style={{ width: "100%" }}
-                          >
-                            Find Group
-                          </Button>
-                        </Link>
-                      </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-              <Row justify="center">
-                <Col span={16}>
-                  <GroupCard />
-                  {/* HARD CODE DATA */}
-                  <Row className={styles.wrapper}>
-                    <Col span={5}>
-                      <span className={styles.text}>Group Nexus</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>1/4</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>Programmieren II</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>9:00 Donnerstag</span>
-                    </Col>
-                    <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
-                        Join
-                      </Button>
-                    </Col>
-                  </Row>
-                  <Row className={styles.wrapper}>
-                    <Col span={5}>
-                      <span className={styles.text}>The Engineer</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>3/4</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>Software Technik</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>10:30 Dienstag</span>
-                    </Col>
-                    <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
-                        Join
-                      </Button>
-                    </Col>
-                  </Row>
-                  <Row className={styles.wrapper}>
-                    <Col span={5}>
-                      <span className={styles.text}>The Worble</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>4/4</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>Lineare Algebra A</span>
-                    </Col>
-                    <Col span={5}>
-                      <span className={styles.text}>14:30 Dienstag</span>
-                    </Col>
-                    <Col span={4} style={{ textAlign: "right" }}>
-                      <Button
-                        onClick={() => notify()}
-                        type="primary"
-                        size="large"
-                      >
-                        Join
-                      </Button>
-                    </Col>
-                  </Row>
-                  {/* END HC DATA */}
-                </Col>
-              </Row>
+              <p></p>
+              {/* FILTER */}
+              <Table
+                columns={columns}
+                expandable={{
+                  expandedRowRender: (record) => (
+                    <p style={{ margin: 0 }}>{record.intro}</p>
+                  ),
+                  rowExpandable: (record) => record.intro !== "",
+                }}
+                pagination={{
+                  defaultPageSize: 7,
+                  showSizeChanger: true,
+                  pageSizeOptions: ["7", "14", "21"],
+                }}
+                
+                dataSource={data}
+              />
             </div>
           </Content>
         </Layout>

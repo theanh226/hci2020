@@ -109,17 +109,7 @@ const ButtonEdit = () => {
                           },
                         ]}
                       >
-                        <DatePicker
-                          format="YYYY-MM-DD HH:mm"
-                          disabledDate={disabledDate}
-                          disabledTime={disabledDateTime}
-                          showTime={{
-                            defaultValue: moment('00:00:00', 'HH:mm:ss'),
-                          }}
-                          hideDisabledOptions
-                          minuteStep={15}
-                          style={{ width: '100%' }}
-                        />
+                        <Input />
                       </Form.Item>
                     </Col>
                     <Col span={24} className={styles.introduction}>
@@ -135,23 +125,6 @@ const ButtonEdit = () => {
                       </div>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
-              <Row justify="center">
-                <Col span={24}>
-                  <Form.Item {...tailLayout}>
-                    <Button
-                      onClick={notify}
-                      type="primary"
-                      size="large"
-                      htmlType="submit"
-                      style={{ marginTop: '2em', width: '50%' }}
-                    >
-                      <Typography.Title level={4} style={{ color: 'white' }}>
-                        Edit Group
-                      </Typography.Title>
-                    </Button>
-                  </Form.Item>
                 </Col>
               </Row>
             </Form>

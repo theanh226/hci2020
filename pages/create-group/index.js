@@ -35,15 +35,6 @@ const CreateGroupPage = () => {
       draggable: true,
       progress: undefined,
     });
-    toast.error("Error", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
   //   SET TIME
   const disabledDate = (current) => {
     // Can not select days before today and today
@@ -120,17 +111,7 @@ const CreateGroupPage = () => {
                             },
                           ]}
                         >
-                          <DatePicker
-                            format="YYYY-MM-DD HH:mm"
-                            disabledDate={disabledDate}
-                            disabledTime={disabledDateTime}
-                            showTime={{
-                              defaultValue: moment("00:00:00", "HH:mm:ss"),
-                            }}
-                            hideDisabledOptions
-                            minuteStep={15}
-                            style={{ width: "100%" }}
-                          />
+                          <Input/>
                         </Form.Item>
                       </Col>
                       <Col span={16} className={styles.introduction}>

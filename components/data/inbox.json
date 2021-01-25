@@ -1,0 +1,18 @@
+    [
+        {
+            "key": 1,
+            "sender": "Max Musterusermann",
+            "content": "You have been accepted to Group A. The ...",
+            "time": "8/2/2020 Dienstag 9:24 PM",
+            "detail": "You have been accepted to Group A. The detailed content of the mail will be display here, in an expandable row.",
+            "option": ""
+        },
+        {
+            "key": 2,
+            "sender": "Lena Dimitricus",
+            "content": "Lena Dimitricus would want to join your group ...",
+            "time": "2/1/2021 Montag 11:43 PM",
+            "detail": "Lena Dimitricus would want to join your group: [My Group | Mensch Computer Interaktion | 10:00 Dienstag].",
+            "option": "Accept"
+        }
+    ]

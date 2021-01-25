@@ -1,0 +1,74 @@
+    [
+        {
+            "key": 1,
+            "name": "Group A",
+            "subject": "Analysis",
+            "time": "10:00 Dienstag",
+            "member": "3/4",
+            "intro": "We like to learn Analysis."
+        },
+        {
+            "key": 2,
+            "name": "Group B",
+            "subject": "Lineare Algebra",
+            "time": "12:00 Mittwoch",
+            "member": "1/4",
+            "intro": "Lineare Algebra is my favorite subject."
+        },
+        {
+            "key": 3,
+            "name": "Other Analysis Group",
+            "subject": "Analysis",
+            "time": "12:00 Mittwoch",
+            "member": "1/4",
+            "intro": "Let's study together"
+        },
+        {
+            "key": 4,
+            "name": "Programming Group",
+            "subject": "Programmieren I",
+            "time": "16:00 Freitag",
+            "member": "2/4",
+            "intro": "Hello World!"
+        },
+        {
+            "key": 5,
+            "name": "Group E",
+            "subject": "Elektrotechnische Grundlagen der Informatik ",
+            "time": "8:00 Mittwoch",
+            "member": "3/4",
+            "intro": "For the Exam!!"
+        },
+        {
+            "key": 6,
+            "name": "Operation Group",
+            "subject": "Grundlagen der Betriebssysteme",
+            "time": "15:30 Donnerstag",
+            "member": "2/4",
+            "intro": "MacOs, Window, N.E.X.T, ..."
+        },
+        {
+            "key": 7,
+            "name": "Math Bot",
+            "subject": "Analysis",
+            "time": "8:30 Dienstag",
+            "member": "3/4",
+            "intro": "Let's study Analysis together"
+        },
+        {
+            "key": 8,
+            "name": "Some other Group",
+            "subject": "Stochastik A",
+            "time": "14:00 Montag",
+            "member": "3/4",
+            "intro": "Stochastiker"
+        },
+        {
+            "key": 9,
+            "name": "Grou 6tykl C",
+            "subject": "Lineare Algebra",
+            "time": "12:00 Mittwoch",
+            "member": "4/4",
+            "intro": "This group is full!"
+        }
+    ]

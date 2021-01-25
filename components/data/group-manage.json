@@ -1,0 +1,20 @@
+[
+    {
+        "key": 1,
+        "name": "My Group",
+        "subject": "Mensch Computer Interaktion",
+        "time": "10:00 Dienstag",
+        "member": "1/4",
+        "intro": "This is the group I created.",
+        "option": "own"
+    },
+    {
+        "key": 2,
+        "name": "Lineare Algebra Studing Group",
+        "subject": "Lineare Algebra A",
+        "time": "12:00 Mittwoch",
+        "member": "4/4",
+        "intro": "Lineare Algebra is my favorite subject.",
+        "option": ""
+    }
+]
