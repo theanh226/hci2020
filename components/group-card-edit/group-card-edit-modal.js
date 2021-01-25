@@ -109,17 +109,7 @@ const ButtonEdit = () => {
                           },
                         ]}
                       >
-                        <DatePicker
-                          format="YYYY-MM-DD HH:mm"
-                          disabledDate={disabledDate}
-                          disabledTime={disabledDateTime}
-                          showTime={{
-                            defaultValue: moment('00:00:00', 'HH:mm:ss'),
-                          }}
-                          hideDisabledOptions
-                          minuteStep={15}
-                          style={{ width: '100%' }}
-                        />
+                        <Input />
                       </Form.Item>
                     </Col>
                     <Col span={24} className={styles.introduction}>
