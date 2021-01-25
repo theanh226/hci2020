@@ -141,12 +141,19 @@ const FindGroupPage = () => {
               {/* FILTER */}
               <Table
                 columns={columns}
-                dataSource={data}
+                expandable={{
+                  expandedRowRender: (record) => (
+                    <p style={{ margin: 0 }}>{record.intro}</p>
+                  ),
+                  rowExpandable: (record) => record.intro !== "",
+                }}
                 pagination={{
                   defaultPageSize: 7,
                   showSizeChanger: true,
                   pageSizeOptions: ["7", "14", "21"],
                 }}
+                
+                dataSource={data}
               />
               {/* <FindDataContainer findData={data} /> */}
             </div>
