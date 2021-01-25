@@ -1,0 +1,22 @@
+.wrapper {
+  background-color: #ffffff;
+  padding: 0.5em 2em;
+  margin-top: 0.5em;
+  line-height: 3;
+}
+.text {
+  font-size: 1em;
+}
+
+/* INTRODUCE WORDS */
+.introductionWrapper {
+  background-color: #cccccc;
+  padding: 1em;
+}
+.introduceTitle {
+  text-align: center;
+  font-size: 1.25em;
+}
+.TextArea {
+  height: 100px !important;
+}
