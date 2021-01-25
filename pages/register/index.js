@@ -4,7 +4,19 @@ import { Input, Button } from "antd";
 import Layout from "../../layouts/index";
 import styles from "./Register.module.css";
 
+import { toast } from "react-toastify";
+
 const LoginPage = () => {
+  const notify = () =>
+    toast.success("Account is successfully registered!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <Layout>
       <form
@@ -28,7 +40,7 @@ const LoginPage = () => {
             </p>
           </div>
           <Link href="/login">
-            <Button type="primary" block>
+            <Button type="primary" onClick={() => notify()}>
               Register
             </Button>
           </Link>

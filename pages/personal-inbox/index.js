@@ -3,7 +3,11 @@ import LayoutMain from "../../layouts/index";
 import Sider from "../../components/sider/Sider";
 import { Popconfirm, Layout, Button, Table, Input, Space } from "antd";
 
-import { UserAddOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
+import {
+  UserAddOutlined,
+  DeleteOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 
 // for hc part
 import data from "../../components/data/inbox.json";
@@ -103,20 +107,35 @@ const PersonalInbox = () => {
       render: (option) => (
         <>
           {option == "Accept" ? (
-            <Popconfirm
-              title="Are you sure?"
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button type="primary" ><UserAddOutlined /></Button>
-            </Popconfirm>
+            <div>
+              <Popconfirm
+                title="Do you want delete this mail?"
+                okText="Yes"
+                cancelText="No"
+              >
+                <Button type="danger">
+                  <DeleteOutlined />
+                </Button>
+              </Popconfirm>
+              <Popconfirm
+                title="Do you want this user join your group?"
+                okText="Yes"
+                cancelText="Cancel"
+              >
+                <Button style={{marginLeft: "0.5em"}} type="primary">
+                  <UserAddOutlined />
+                </Button>
+              </Popconfirm>
+            </div>
           ) : (
             <Popconfirm
               title="Do you want delete this mail?"
               okText="Yes"
               cancelText="No"
             >
-              <Button type="danger"><DeleteOutlined /></Button>
+              <Button type="danger">
+                <DeleteOutlined />
+              </Button>
             </Popconfirm>
           )}
         </>

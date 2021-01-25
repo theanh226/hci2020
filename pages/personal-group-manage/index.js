@@ -145,7 +145,26 @@ const PersonalGroupManage = () => {
                 columns={columns}
                 expandable={{
                   expandedRowRender: (record) => (
-                    <p style={{ margin: 0 }}>{record.intro}</p>
+                    <div>
+                      <p style={{ margin: 0 }}>{record.intro}</p>
+                      <p style={{ margin: 0 }}>Member:</p>
+                      {record.option == "own" ? (
+                        <Popconfirm
+                          title="Do you want to kick yourself and disband this group?"
+                          okText="Yes"
+                          cancelText="No"
+                        >
+                          <Button style={{marginTop: '1em'}}>{record.detail_member[0]}</Button>
+                        </Popconfirm>
+                      ) : (
+                        <div>
+                          <Button style={{marginTop: '1em'}} disabled>{record.detail_member[0]}</Button>
+                          <Button style={{marginTop: '1em', marginLeft:'0.5em'}} disabled>{record.detail_member[1]}</Button>
+                          <Button style={{marginTop: '1em', marginLeft:'0.5em'}} disabled>{record.detail_member[2]}</Button>
+                          <Button style={{marginTop: '1em', marginLeft:'0.5em'}} disabled>{record.detail_member[3]}</Button>
+                        </div>
+                      )}
+                    </div>
                   ),
                   rowExpandable: (record) => record.intro !== "",
                 }}

@@ -6,6 +6,7 @@
         "time": "10:00 Dienstag",
         "member": "1/4",
         "intro": "This is the group I created.",
+        "detail_member": ["SampleUser"],
         "option": "own"
     },
     {
@@ -15,6 +16,7 @@
         "time": "12:00 Mittwoch",
         "member": "4/4",
         "intro": "Lineare Algebra is my favorite subject.",
+        "detail_member": ["SampleUser", "Max Mustermann", "Emi Muserfrau", "Corda Musterkind"],
         "option": ""
     }
 ]

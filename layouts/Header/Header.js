@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Row, Col, Menu, Dropdown, Button } from 'antd';
-import { Avatar } from 'antd';
+import React from 'react';
+import { Avatar, Row, Col, Menu, Dropdown } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import styles from './Header.module.css';
