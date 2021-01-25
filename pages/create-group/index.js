@@ -35,15 +35,6 @@ const CreateGroupPage = () => {
       draggable: true,
       progress: undefined,
     });
-    toast.error("Error", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
   //   SET TIME
   const disabledDate = (current) => {
     // Can not select days before today and today

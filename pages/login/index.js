@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { Input, Button } from "antd";
-import Layout from "../../layouts/index";
+import Header from "../../layouts/Header-copy/Header";
 import styles from "./Login.module.css";
 
 const LoginPage = () => {
   return (
-    <Layout>
+    <div>
+      <Header />
       <form
         style={{
           backgroundImage:
@@ -32,7 +33,7 @@ const LoginPage = () => {
           </Link>
         </div>
       </form>
-    </Layout>
+    </div>
   );
 };
 export default LoginPage;
